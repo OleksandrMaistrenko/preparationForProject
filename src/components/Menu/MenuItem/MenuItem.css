@@ -1,0 +1,44 @@
+.pizza {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.pizza__image {
+  width: 100px;
+  height: 100px;
+}
+
+.pizza__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.pizza_sold-out {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+}
+
+.pizza__name {
+  font-weight: 500;
+}
+
+.pizza__ingredients {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.pizza__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pizza__price {
+  font-size: 14px;
+}
+
+.button {
+  border-radius: 10px;
+}
