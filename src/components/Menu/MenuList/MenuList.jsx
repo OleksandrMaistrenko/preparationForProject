@@ -13,4 +13,3 @@ const MenuList = () => {
 };
 
 export default MenuList;
-3;
