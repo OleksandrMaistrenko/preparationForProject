@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./MenuItem.css";
 
 const MenuItem = ({ item }) => {
   const { name, unitPrice, imageUrl, ingredients, soldOut } = item;
   const [count, setCount] = useState(0);
-  const [showButtons, setShowButtons] = useState(false);
-
-  useEffect(() => {
-    if (count > 0) {
-      setShowButtons(true);
-    } else {
-      setShowButtons(false);
-    }
-  }, [count]);
 
   function handleClick() {
     setCount(1);
@@ -48,7 +39,7 @@ const MenuItem = ({ item }) => {
           <div className="pizza__actions">
             <p className="pizza__price">${unitPrice}</p>
 
-            {!showButtons ? (
+            {!count ? (
               <button onClick={handleClick} className="button">
                 Add to cart
               </button>
