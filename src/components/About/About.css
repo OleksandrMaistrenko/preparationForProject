@@ -1,0 +1,21 @@
+.about {
+  background-image: url("/src/pictures/About/about.jpg");
+
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.discription {
+  color: wheat;
+  border-radius: 10px;
+  max-width: 90%;
+  height: auto;
+  font-size: 30px;
+  text-align: center;
+}
+.contacts {
+  padding-top: 100px;
+}

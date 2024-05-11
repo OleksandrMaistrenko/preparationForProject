@@ -1,13 +1,22 @@
 import React from "react";
 import Input from "../Input/Input";
 import "./Header.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
-      <a className="logo" href="/">
+      <NavLink className="logo" to="/about">
         Pizza Day
-      </a>
+      </NavLink>
+
+      <NavLink className="logo" to="/">
+        Authorisation
+      </NavLink>
+      <NavLink className="logo" to="/menu">
+        Menu
+      </NavLink>
+
       <form>
         <Input placeholder="Search for the order #" />
       </form>

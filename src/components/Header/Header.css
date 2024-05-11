@@ -2,8 +2,12 @@
   text-decoration: none;
   font-size: 20px;
   color: rgb(68, 64, 60);
-}
 
+  transition: color 0.3s ease;
+}
+.logo:hover {
+  color: #ff4500;
+}
 .header {
   position: fixed;
   top: 0;

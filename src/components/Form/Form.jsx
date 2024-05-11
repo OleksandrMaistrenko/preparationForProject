@@ -1,14 +1,42 @@
-import React from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import "./Form.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { createContext } from "react";
+
+export const UserContext = createContext(null);
 
 const Form = () => {
+  const usenavigate = useNavigate();
+  const [userName, setUserName] = useState("");
+
+  const userContextValue = {
+    userName: userName,
+    onChange: (e) => handleNameChange(e),
+    placeholder: "Your full name",
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(userName, "username");
+    if (!userName) {
+      alert("Fill in the form");
+      return;
+    }
+    usenavigate("/menu");
+  };
+
+  const handleNameChange = (name) => {
+    setUserName(name);
+  };
   return (
-    <form className="login-form">
-      <Input placeholder="Your full name" />
-      <Button />
-    </form>
+    <UserContext.Provider value={userContextValue}>
+      <form className="login-form" onSubmit={handleFormSubmit}>
+        <Input />
+        <Button />
+      </form>
+    </UserContext.Provider>
   );
 };
 
