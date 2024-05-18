@@ -4,6 +4,7 @@ import { UserContext } from "../Form/Form";
 
 const Input = () => {
   const data = useContext(UserContext);
+
   return (
     <input
       type="text"
