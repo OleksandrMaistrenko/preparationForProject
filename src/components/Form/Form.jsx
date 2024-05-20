@@ -2,14 +2,12 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import "./Form.css";
 import { useNavigate } from "react-router-dom";
-import { useState, useMemo } from "react";
-import { createContext } from "react";
-
-export const UserContext = createContext(null);
+import { UserContext } from "../UserContex/UserContex";
+import { useContext } from "react";
 
 const Form = () => {
   const usenavigate = useNavigate();
-  const [userName, setUserName] = useState("");
+  const { userName, onChange, placeholder } = useContext(UserContext);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -20,25 +18,12 @@ const Form = () => {
     }
     usenavigate("/menu");
   };
-  const userContextValue = useMemo(
-    () => ({
-      userName: userName,
-      onChange: (e) => handleNameChange(e),
-      placeholder: "Your full name",
-    }),
-    []
-  );
 
-  const handleNameChange = (name) => {
-    setUserName(name);
-  };
   return (
-    <UserContext.Provider value={userContextValue}>
-      <form className="login-form" onSubmit={handleFormSubmit}>
-        <Input />
-        <Button />
-      </form>
-    </UserContext.Provider>
+    <form className="login-form" onSubmit={handleFormSubmit}>
+      <Input value={userName} onChange={onChange} placeholder={placeholder} />
+      <Button />
+    </form>
   );
 };
 

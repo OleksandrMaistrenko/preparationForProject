@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
 import "./Input.css";
-import { UserContext } from "../Form/Form";
 
-const Input = () => {
-  const data = useContext(UserContext);
-
+const Input = ({ value, onChange, placeholder }) => {
   return (
     <input
       type="text"
-      placeholder={data?.placeholder}
-      value={data?.value}
-      onChange={(e) => data?.onChange(e.target.value)}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
     />
   );
 };
