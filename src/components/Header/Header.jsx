@@ -16,6 +16,9 @@ const Header = () => {
       <NavLink className="logo" to="/menu">
         Menu
       </NavLink>
+      <NavLink className="logo" to="/ordernew">
+        OrderNow
+      </NavLink>
 
       <form>
         <Input placeholder="Search for the order #" />

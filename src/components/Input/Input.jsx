@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./Input.css";
 
 const Input = ({ value, onChange, placeholder }) => {

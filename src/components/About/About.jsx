@@ -16,7 +16,7 @@ const About = () => {
           Contacts:
           <br />
           Olympus street number 1<br />
-          tel:11111111
+          tel:+38011111111
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 .about {
   background-image: url("/src/pictures/About/about.jpg");
-
+  padding: 20px;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
@@ -15,7 +15,31 @@
   height: auto;
   font-size: 30px;
   text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .contacts {
   padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .discription {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .contacts {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .discription {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contacts {
+    padding-top: 20px;
+  }
 }
