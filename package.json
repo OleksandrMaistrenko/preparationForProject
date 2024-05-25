@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "preparationForProject",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-
+  "homepage": "https://oleksandrmaistrenko.github.io/preparationForProject",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

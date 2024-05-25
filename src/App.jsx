@@ -12,7 +12,7 @@ import OrderNow from "./components/OrderNew/OrderNow";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/preparationForProject">
       <div className="wrapper">
         <Header />
         <Routes>
