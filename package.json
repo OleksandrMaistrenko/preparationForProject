@@ -1,9 +1,9 @@
 {
-  "name": "preparationForProject",
+  "name": "",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://localhost:5173/",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
