@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://oleksandrmaistrenko.github.io/",
+  "homepage": "http://localhost:5173/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
