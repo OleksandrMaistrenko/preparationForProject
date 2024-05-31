@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import Authorisation from "./components/Authorisation/Authorisation";
 import ElementNotFound from "./components/ElementNotFound/ElementNotFound";
 import OrderNow from "./components/OrderNew/OrderNow";
+import OrderDetails from "./components/OrderDetails/OrderDetails";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/ordernew" element={<OrderNow />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/about" element={<About />} />
+          <Route path="/order/:id" element={<OrderDetails />} />
           <Route path="*" element={<ElementNotFound />} />
         </Routes>
       </div>

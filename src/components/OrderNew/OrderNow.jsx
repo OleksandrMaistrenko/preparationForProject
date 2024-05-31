@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./OrderNow.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const OrderNow = () => {
   const {
@@ -8,10 +10,45 @@ const OrderNow = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const orderData = {
+      address: data.address,
+      customer: data.username,
+      phone: data.phone,
+      priority: data.priority || false,
+      position: "",
+      cart: [
+        {
+          name: "Pizza Margherita",
+          pizzaId: "1",
+          quantity: 1,
+          totalPrice: 39.0,
+          unitPrice: 39.0,
+        },
+      ],
+    };
+
+    try {
+      const response = await axios.post(
+        "https://react-fast-pizza-api.onrender.com/api/order",
+        orderData
+      );
+
+      const { status, data: responseData } = response.data;
+
+      if (status === "success") {
+        navigate(`/order/${responseData.id}`, { state: responseData });
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error creating order", error);
+      alert("Something went wrong");
+    }
   };
+
   return (
     <div className="order-form-container">
       <h2>Ready to order? Let's go!</h2>
