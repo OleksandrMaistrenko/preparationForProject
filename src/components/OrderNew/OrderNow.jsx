@@ -35,7 +35,7 @@ const OrderNow = () => {
         "https://react-fast-pizza-api.onrender.com/api/order",
         orderData
       );
-
+      console.log(response.data);
       const { status, data: responseData } = response.data;
 
       if (status === "success") {
