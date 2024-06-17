@@ -3,8 +3,12 @@ import { useForm } from "react-hook-form";
 import "./OrderNow.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const OrderNow = () => {
+  const cart = useSelector((state) => state.cart);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+
   const {
     register,
     handleSubmit,
@@ -19,17 +23,17 @@ const OrderNow = () => {
       phone: data.phone,
       priority: data.priority || false,
       position: "",
-      cart: [
-        {
-          name: "Pizza Margherita",
-          pizzaId: "1",
-          quantity: 1,
-          totalPrice: 39.0,
-          unitPrice: 39.0,
-        },
-      ],
+      cart: cart.cartItems.map((item) => {
+        return {
+          name: item.name,
+          pizzaId: item.id,
+          quantity: item.count,
+          totalPrice: item.totalPrice,
+          unitPrice: item.unitPrice,
+        };
+      }),
     };
-
+    console.log(orderData);
     try {
       const response = await axios.post(
         "https://react-fast-pizza-api.onrender.com/api/order",
@@ -96,7 +100,7 @@ const OrderNow = () => {
           <label htmlFor="priority">Want to give your order priority?</label>
           <input id="priority" type="checkbox" {...register("priority")} />
         </div>
-        <button type="submit">ORDER NOW FOR €39.00</button>
+        <button type="submit">ORDER NOW FOR {totalPrice}$</button>
       </form>
     </div>
   );

@@ -1,0 +1,88 @@
+.containerCart {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 30%;
+}
+.emptyCart {
+  padding-top: 50px;
+  text-align: center;
+  width: 100vw;
+  height: 500px;
+  background-image: url("/src/pictures/cart/emptyCar.png");
+  background-position: center;
+}
+
+.window {
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgb(234, 179, 8);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.hut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.yourOrder {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.clearAllCart button {
+  background-color: #ff3300;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clearAllCart button:hover {
+  background-color: #cc2900;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.allOrder {
+  font-weight: bold;
+}
+
+.sum {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}

@@ -1,30 +1,21 @@
 import MenuList from "./MenuList/MenuList";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPizzas } from "../redux/slices/menuSlice";
 
 const Menu = () => {
-  const [menu, setMenu] = useState([]);
+  const dispatch = useDispatch();
+  const pizzas = useSelector((state) => state.menu.pizzas);
+
+  const sortedPizzas = [...pizzas].sort((a, b) => b.soldout - a.soldout);
 
   useEffect(() => {
-    const getAllPizzas = async () => {
-      try {
-        const res = await fetch(
-          "https://react-fast-pizza-api.onrender.com/api/menu"
-        );
-        if (!res.ok) {
-          throw new Error("Failed to fetch");
-        }
-        const data = await res.json();
-        setMenu(data.data);
-      } catch (e) {
-        console.log(e.message);
-      }
-    };
-    getAllPizzas();
-  }, []);
+    dispatch(getPizzas());
+  }, [dispatch]);
 
   return (
     <div>
-      <MenuList menu={menu} />
+      <MenuList menu={sortedPizzas} />
     </div>
   );
 };

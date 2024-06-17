@@ -1,7 +1,8 @@
 import React from "react";
-import Input from "../Input/Input";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
+import CartIcon from "../Cart/CartIcon/CartIcon";
+import Cart from "../Cart/Cart";
 
 const Header = () => {
   return (
@@ -16,13 +17,10 @@ const Header = () => {
       <NavLink className="logo" to="/menu">
         Menu
       </NavLink>
-      <NavLink className="logo" to="/ordernew">
-        OrderNow
+      <NavLink className="logo" to="/cart">
+        Cart
       </NavLink>
-
-      <form>
-        <Input placeholder="Search for the order #" />
-      </form>
+      <CartIcon />
     </header>
   );
 };

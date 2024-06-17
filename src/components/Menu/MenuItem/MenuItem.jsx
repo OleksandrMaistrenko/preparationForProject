@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import "./MenuItem.css";
+import { useDispatch } from "react-redux";
+import { addToCart, decreaseCountItem } from "../../redux/slices/CartSlices";
 
 const MenuItem = ({ item }) => {
   const { name, unitPrice, imageUrl, ingredients, soldOut } = item;
   const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
 
   function handleClick() {
+    dispatch(addToCart(item));
     setCount(1);
   }
 
   function decreaseCount() {
+    dispatch(decreaseCountItem(item));
+
     if (count > 1) {
       setCount(count - 1);
     } else {
@@ -18,6 +24,7 @@ const MenuItem = ({ item }) => {
   }
 
   function increaseCount() {
+    dispatch(addToCart(item));
     setCount(count + 1);
   }
 
