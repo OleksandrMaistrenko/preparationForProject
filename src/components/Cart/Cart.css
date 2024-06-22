@@ -5,6 +5,7 @@
   width: 30%;
 }
 .emptyCart {
+  background-color: red;
   padding-top: 50px;
   text-align: center;
   width: 100vw;

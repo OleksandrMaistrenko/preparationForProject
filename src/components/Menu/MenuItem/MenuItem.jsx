@@ -37,7 +37,7 @@ const MenuItem = ({ item }) => {
       <li className="pizza">
         <img
           src={imageUrl}
-          className={soldOut ? "pizza__image" : "pizza_sold-out"}
+          className={soldOut ? "pizza_sold-out" : "pizza__image"}
           alt="Pizza"
         />
         <div className="pizza__info">
@@ -47,8 +47,12 @@ const MenuItem = ({ item }) => {
             <p className="pizza__price">${unitPrice}</p>
 
             {!count ? (
-              <button onClick={handleClick} className="button">
-                Add to cart
+              <button
+                onClick={handleClick}
+                className={soldOut ? "button sold-out" : "button"}
+                disabled={soldOut}
+              >
+                {soldOut ? "Sold Out" : "Add to cart"}
               </button>
             ) : (
               <>

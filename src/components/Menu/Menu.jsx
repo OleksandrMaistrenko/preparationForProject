@@ -7,7 +7,7 @@ const Menu = () => {
   const dispatch = useDispatch();
   const pizzas = useSelector((state) => state.menu.pizzas);
 
-  const sortedPizzas = [...pizzas].sort((a, b) => b.soldout - a.soldout);
+  //const sortedPizzas = [...pizzas].sort((a, b) => b.soldOut - a.soldOut);
 
   useEffect(() => {
     dispatch(getPizzas());
@@ -15,7 +15,7 @@ const Menu = () => {
 
   return (
     <div>
-      <MenuList menu={sortedPizzas} />
+      <MenuList menu={pizzas} />
     </div>
   );
 };

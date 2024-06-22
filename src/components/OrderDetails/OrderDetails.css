@@ -67,3 +67,13 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.success-message {
+  text-align: center;
+  font-size: 24px;
+  color: rgb(234 179 8);
+}

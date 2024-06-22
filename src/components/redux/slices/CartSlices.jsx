@@ -5,7 +5,7 @@ const initialState = {
   totalPrice: 0,
   totalCount: 0,
 };
-
+//Local stiridge
 const cartSlice = createSlice({
   name: "cart",
   initialState,
